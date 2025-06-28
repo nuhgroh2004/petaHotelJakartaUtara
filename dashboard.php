@@ -255,6 +255,9 @@ $kecamatan_result = mysqli_query($conn, $kecamatan_query);
                             <li><a class="dropdown-item active" href="dashboard.php">
                                 <i class="fas fa-dashboard me-2"></i> Dashboard
                             </a></li>
+                            <li><a class="dropdown-item" href="angka.php">
+                                <i class="fas fa-chart-bar me-2"></i> Data Kecamatan
+                            </a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="auth/logout.php">
                                 <i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -347,9 +350,9 @@ $kecamatan_result = mysqli_query($conn, $kecamatan_query);
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="kecamatan-tab" data-bs-toggle="tab" data-bs-target="#kecamatan" type="button" role="tab">
+                <a class="nav-link" href="angka.php">
                     <i class="fas fa-chart-bar"></i> Data Kecamatan
-                </button>
+                </a>
             </li>
         </ul>
 
@@ -393,47 +396,6 @@ $kecamatan_result = mysqli_query($conn, $kecamatan_query);
                                             <button class="btn btn-sm btn-danger" onclick="deleteHotel(<?php echo $hotel['id']; ?>)">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </td>
-                                    </tr>
-                                    <?php endwhile; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kecamatan Tab -->
-            <div class="tab-pane fade" id="kecamatan" role="tabpanel">
-                <div class="card shadow">
-                    <div class="card-header">
-                        <h5 class="mb-0"><i class="fas fa-chart-bar"></i> Data Persebaran Per Kecamatan</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Kecamatan</th>
-                                        <th>Jumlah Hotel</th>
-                                        <th>Persentase</th>
-                                        <th>Progress</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php while($kec = mysqli_fetch_assoc($kecamatan_result)): 
-                                        $percentage = ($kec['jml'] / $stats['total_persebaran']) * 100;
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $kec['kecamatan']; ?></td>
-                                        <td><strong><?php echo $kec['jml']; ?></strong></td>
-                                        <td><?php echo number_format($percentage, 1); ?>%</td>
-                                        <td>
-                                            <div class="progress" style="height: 20px;">
-                                                <div class="progress-bar bg-primary" role="progressbar" style="width: <?php echo $percentage; ?>%" aria-valuenow="<?php echo $percentage; ?>" aria-valuemin="0" aria-valuemax="100">
-                                                    <?php echo number_format($percentage, 1); ?>%
-                                                </div>
-                                            </div>
                                         </td>
                                     </tr>
                                     <?php endwhile; ?>
