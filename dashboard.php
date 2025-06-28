@@ -359,9 +359,7 @@ $kecamatan_result = mysqli_query($conn, $kecamatan_query);
                 <div class="card shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0"><i class="fas fa-hotel"></i> Data Hotel</h5>
-                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#hotelModal" onclick="openHotelModal()">
-                            <i class="fas fa-plus"></i> Tambah Hotel
-                        </button>
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -539,55 +537,7 @@ $kecamatan_result = mysqli_query($conn, $kecamatan_query);
             </div>
         </div>
     </div>
-                                            <option value="Pademangan">Pademangan</option>
-                                            <option value="Penjaringan">Penjaringan</option>
-                                            <option value="Tanjung Priok">Tanjung Priok</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="latitude" class="form-label">Latitude</label>
-                                        <input type="number" step="any" class="form-control" id="latitude" name="latitude" required readonly>
-                                        <small class="text-muted">Akan terisi otomatis saat klik peta</small>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="longitude" class="form-label">Longitude</label>
-                                        <input type="number" step="any" class="form-control" id="longitude" name="longitude" required readonly>
-                                        <small class="text-muted">Akan terisi otomatis saat klik peta</small>
-                                    </div>
-                                </div>
-                                
-                                <div class="alert alert-info">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <strong>Petunjuk:</strong> Klik pada lokasi di peta sebelah kanan untuk menentukan posisi hotel. 
-                                    Koordinat dan alamat akan terisi secara otomatis.
-                                </div>
-                            </div>
-                            
-                            <!-- Interactive Map -->
-                            <div class="col-md-6">
-                                <label class="form-label">Pilih Lokasi pada Peta</label>
-                                <div id="map" style="height: 400px; width: 100%; border: 2px solid #dee2e6; border-radius: 8px;"></div>
-                                <small class="text-muted mt-2 d-block">
-                                    <i class="fas fa-mouse-pointer"></i> Klik pada peta untuk menandai lokasi hotel
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="fas fa-times me-2"></i>Batal
-                        </button>
-                        <button type="submit" class="btn btn-primary" id="saveHotelBtn">
-                            <i class="fas fa-save me-2"></i>Simpan
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+                                        
 
     <!-- Add Hotel Modal (triggered from navbar) -->
     <div class="modal fade" id="addHotelModal" tabindex="-1">
